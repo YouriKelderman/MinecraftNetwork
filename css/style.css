@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+:root {
+    --nav: #1c1c21;
+    --nav-mobile: #383942;
+    --bg-main: #212128;
+    --pageWidth: 70vw;
+    --scrollTransition: 500ms;
+}
+
+/* Non page-specific */
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 7px;
+}
+
+#navbar, .active, #navbar button, #navbar.active button, #navbar img, #navbar.active img {
+    transition: var(--scrollTransition);
+}
+
+#navbar {
+    width: 100vw;
+    height: 100px;
+    background-color: var(--nav);
+    color: #8f96a3 !important;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    z-index: 100;
+}
+
+#navHolder {
+    align-self: center;
+    width: var(--pageWidth);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navLinks {
+    display: flex;
+    align-items: center;
+}
+
+#navbar li {
+    padding: 0 10px;
+    text-decoration: none;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#navbar li:hover {
+    transition: 200ms;
+    color: white;
+}
+
+#navbar img {
+    width: 100px;
+
+}
+
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* Navbar when scrolled*/
+/* Active class gets added to navbar, you can change the other items
+during the scrolled state by mentioning #navbar.active */
+
+#navbar.active {
+    background-color: var(--nav) !important;
+    height: 60px !important;
+}
+
+#navbar.active button {
+    padding: 5px 10px;
+
+}
+
+#navbar.active img {
+    width: 70px;
+
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+}
+
+html {
+    font-family: "Roboto";
+    font-weight: normal;
+    background-color: var(--bg-main);
+}
+
+
+
+/* StyleSheet */
+
+button {
+    color: white;
+    background-color: #008cff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-family: "Roboto";
+    box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.27);
+}
+button:hover{
+    transform: translateY(-5px);
+    background-color: #299bff;
+}
+/* Hamburger menu */
+.hamburger.mobile .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.mobile .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+    background-color: #ffffff;
+}
+
+.hamburger.mobile .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #ffffff;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.container{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    backdrop-filter: blur(10px);
+}
+
+.games {
+    height: 80vh;
+    margin: 0;
+    background-image: url("../img/game1.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+#openingLogo{
+    transform: translateY(-70px);
+    position: absolute;
+    z-index: 90;
+    width: 30vw;
+}
+
+#carousel{
+    width: var(--pageWidth);
+    height: 450px;
+    border-radius: 20px;
+    background-color: #fff;
+    transform: translateY(150px);
+    z-index: 89;
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+
+
+@media (max-width: 700px) {
+    #navLinks, #navbar button {
+        display: none;
+    }
+
+    .active {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .hamburger {
+        display: block !important;
+
+    }
+
+    #navHolder {
+        width: 100vw;
+    }
+
+    #navbar {
+        left: -100%;
+        top: 0;
+        height: 100vmax !important;
+        width: 300px !important;
+        display: flex;
+        padding-top: 30px;
+        background-color: var(--nav-mobile);
+    }
+
+    #navbar.mobile {
+        left: 0;
+    }
+    #navbar img{
+        width: 100px;
+    }
+
+    #navbar.mobile #navLinks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #navbar.mobile #navHolder {
+        flex-direction: column;
+        align-items: revert;
+    }
+
+    #navbar.mobile ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #navbar.mobile li {
+        padding: 10px;
+    }
+
+}
