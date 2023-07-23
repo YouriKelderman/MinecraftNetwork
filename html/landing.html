@@ -14,7 +14,7 @@
     <nav id="navbar">
         <div id="navHolder">
             <div id="navLinks">
-                <img src="../img/logo.png" alt="Server Logo">
+                <img src="../img/MINEHUB.png" alt="Server Logo">
                 <ul>
                     <li class="nav-item">
                         <a href="" class="nav-link">About</a>
@@ -41,12 +41,30 @@
 
 </header>
 <main>
-    <section class="games">
+    <section class="games" id="games">
         <div class="container">
-        <img id="openingLogo" src="../img/logo.png">
-            <div id="carousel"></div>
+        <img id="openingLogo" src="../img/MINEHUB.png">
+            <div id="carousel">
+                <div class="slide fade" id="game1">
+                    <div class="text"></div>
+                </div>
+                <div class="slide fade"style="display: none" id="game2">
+                    <div class="text"></div>
+                </div>
+                <div class="slide fade"style="display: none" id="game3">
+                    <div class="text"></div>
+                </div>
+                <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a id="next" onclick="plusSlides(1)">&#10095;</a>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
         </div>
     </section>
+    <section id="about"></section>
 </main>
 <footer></footer>
 </body>
