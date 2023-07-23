@@ -23,7 +23,7 @@
     border-radius: 7px;
 }
 
-#navbar, .active, #navbar button, #navbar.active button, #navbar img, #navbar.active img {
+#navbar, .active, #navbar button, #navbar.active button, #navbar img, #navLogo {
     transition: var(--scrollTransition);
 }
 
@@ -59,7 +59,7 @@
 #navbar li {
     padding: 0 10px;
     text-decoration: none;
-    display: inline;
+
 }
 
 a {
@@ -72,9 +72,9 @@ a {
     color: white;
 }
 
-#navbar img {
+#navLogo {
     width: 150px;
-
+margin-right: 5px;
 }
 
 .hamburger {
@@ -85,7 +85,16 @@ a {
     cursor: pointer;
     z-index: 100;
 }
+.icon{
+    align-self: center;
+    width: 23px;
+    height: 23px;
 
+}
+.nav-item{
+display: flex;
+    justify-content: center;
+}
 /* Navbar when scrolled*/
 /* Active class gets added to navbar, you can change the other items
 during the scrolled state by mentioning #navbar.active */
@@ -100,7 +109,7 @@ during the scrolled state by mentioning #navbar.active */
 
 }
 
-#navbar.active img {
+#navLogo {
     width: 100px;
 
 
@@ -114,6 +123,8 @@ body {
 
 ul {
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 html {
@@ -222,17 +233,6 @@ border-radius: 20px;
     height: 100%;
 }
 
-#game1 {
-    background-image: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 0%, rgba(255, 255, 255, 0) 100%), url("../img/game1.jpg")
-}
-
-#game2 {
-    background-image: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 0%, rgba(255, 255, 255, 0) 100%), url("../img/game2.jpg")
-}
-
-#game3 {
-    background-image: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 0%, rgba(255, 255, 255, 0) 100%), url("../img/game3.jpg")
-}
 
 #carousel {
     width: var(--pageWidth);
@@ -340,9 +340,7 @@ dot.active, .dot:hover {
         left: 0;
     }
 
-    #navbar img {
-        width: 150px;
-    }
+
 
     #navbar.mobile #navLinks {
         display: flex;

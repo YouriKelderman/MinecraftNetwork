@@ -8,15 +8,18 @@ let backdrop;
 let imageIndex = 1;
 let dots;
 let images;
+
 function init() {
     navbar = document.getElementById("navbar")
     hamburger = document.getElementById("hamburger");
-    backdrop = document.getElementById("backdrop")
+    backdrop = document.getElementById("games")
     images = document.getElementsByClassName("slide");
     dots = document.getElementsByClassName("dot");
     window.addEventListener("scroll", windowScroll);
     hamburger.addEventListener("click", menu);
     windowScroll();
+    switchActive();
+    dotSetup();
 }
 
 function menu() {
@@ -31,6 +34,9 @@ function windowScroll() {
         navbar.classList.remove("active")
     }
 }
+function dotSetup(){
+
+}
 function currentSlide(n) {
     switchActive(imageIndex = n);
 }
@@ -42,7 +48,6 @@ function plusSlides(n) {
 function switchActive(x) {
     let i;
 
-    let dots = document.getElementsByClassName("dot");
     if (x > images.length) {
         imageIndex = 1
     }
@@ -52,10 +57,12 @@ function switchActive(x) {
     for (i = 0; i < images.length; i++) {
         images[i].style.display = "none";
     }
-    // for (i = 0; i < dots.length; i++) {
-    //   dots[i].className = dots[i].className.replace(" active", "");
-    //}
+
+    imageIndex++;
+    if (imageIndex > images.length) {
+        imageIndex = 1
+    }
     images[imageIndex - 1].style.display = "flex";
-    console.log(images[imageIndex -1].style);
-    //dots[imageIndex - 1].className += " active";
+    console.log(backdrop.style.backgroundImage);
+    backdrop.style.backgroundImage = images[imageIndex -1].style.backgroundImage;
 }
