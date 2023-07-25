@@ -5,6 +5,7 @@
     --nav-mobile: #383942;
     --bg-main: #212128;
     --btn-default: #219b12;
+    --stats-bar: #6d9650;
     --pageWidth: 70vw;
     --scrollTransition: 500ms;
 }
@@ -74,7 +75,7 @@ a {
 
 #navLogo {
     width: 150px;
-margin-right: 5px;
+    margin-right: 5px;
 }
 
 .hamburger {
@@ -85,16 +86,19 @@ margin-right: 5px;
     cursor: pointer;
     z-index: 100;
 }
-.icon{
+
+.icon {
     align-self: center;
     width: 23px;
     height: 23px;
 
 }
-.nav-item{
-display: flex;
+
+.nav-item {
+    display: flex;
     justify-content: center;
 }
+
 /* Navbar when scrolled*/
 /* Active class gets added to navbar, you can change the other items
 during the scrolled state by mentioning #navbar.active */
@@ -193,13 +197,14 @@ button:hover {
 .games {
     height: 80vh;
     margin: 0;
-    background-image: url("../img/game1.jpg");
+
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+
 }
 
 #openingLogo {
@@ -216,21 +221,29 @@ button:hover {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    border-radius: 20px;
 
-}
-.slide div{
-    margin: 5px 5px 10px 5px;
-    color: white;
-}
-#game1, #game2, #game3 {
-border-radius: 20px;
-    display: flex;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+
+}
+
+h3 {
+    color: white;
+    font-size: 2em;
+    margin: 0 0 5px 20px;
+    font-weight: bold;
+}
+
+.slide div {
+    margin: 0 20px 20px;
+    color: white;
+}
+
+#game1, #game2, #game3 {
+
 }
 
 
@@ -245,6 +258,7 @@ border-radius: 20px;
     box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.75);
 
 }
+
 .dot {
     transform: translateY(20px);
     cursor: pointer;
@@ -257,8 +271,9 @@ border-radius: 20px;
     transition: background-color 0.6s ease;
 }
 
-dot.active, .dot:hover {
-    background-color: #717171;
+.dot.active {
+    background-color: #4b4b4b;
+
 }
 
 #carousel img {
@@ -294,9 +309,43 @@ dot.active, .dot:hover {
 }
 
 /* about section */
-#about{
+#stats {
+    margin-top: 30vh;
     width: 100vw;
+    height: 150px;
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistic {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.statistic:nth-child(2) {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.statistic p {
+    margin-left: 5px;
+    font-size: 2rem;
+}
+
+.news {
+
+    margin-top: 30vh;
     height: 100vh;
+    width: 100vw;
+    box-shadow: 0 200px 300px rgba(33, 33, 40, 1) inset;
+    background-image: linear-gradient(0deg, rgb(33, 33, 40, 0.95) 0%, rgb(33, 33, 40, 0.95) 100%), url("../img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @keyframes fade {
@@ -308,7 +357,22 @@ dot.active, .dot:hover {
     }
 }
 
+@media (max-width: 900px) {
+    .statistic p {
+        font-size: 1.5rem;
+    }
+
+    #stats {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 850px) {
+    #openingLogo {
+        transform: translateY(-170px);
+        width: var(--pageWidth)
+    }
+
     #navLinks, #navbar button {
         display: none;
     }
@@ -339,7 +403,6 @@ dot.active, .dot:hover {
     #navbar.mobile {
         left: 0;
     }
-
 
 
     #navbar.mobile #navLinks {

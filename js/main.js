@@ -6,20 +6,23 @@ let hamburger;
 let backdrop;
 // Image carousel
 let imageIndex = 1;
-let dots;
+let dots = [];
 let images;
+let dotsHolder;
 
 function init() {
     navbar = document.getElementById("navbar")
     hamburger = document.getElementById("hamburger");
     backdrop = document.getElementById("games")
     images = document.getElementsByClassName("slide");
-    dots = document.getElementsByClassName("dot");
+
+    dotsHolder = document.getElementById("dots");
     window.addEventListener("scroll", windowScroll);
     hamburger.addEventListener("click", menu);
     windowScroll();
-    switchActive();
     dotSetup();
+    switchActive();
+
 }
 
 function menu() {
@@ -34,14 +37,26 @@ function windowScroll() {
         navbar.classList.remove("active")
     }
 }
-function dotSetup(){
 
+function dotSetup() {
+    for (let i = 1; i <= images.length; i++) {
+        let span = document.createElement('span');
+        span.classList.add("dot");
+        span.onclick = function () {
+            currentSlide(i);
+        }
+        dotsHolder.appendChild(span);
+        dots.push(span);
+        console.log(dots);
+    }
 }
+
 function currentSlide(n) {
     switchActive(imageIndex = n);
 }
 
 function plusSlides(n) {
+    
     switchActive(imageIndex += n);
 }
 
@@ -57,12 +72,15 @@ function switchActive(x) {
     for (i = 0; i < images.length; i++) {
         images[i].style.display = "none";
     }
-
-    imageIndex++;
     if (imageIndex > images.length) {
         imageIndex = 1
     }
     images[imageIndex - 1].style.display = "flex";
-    console.log(backdrop.style.backgroundImage);
-    backdrop.style.backgroundImage = images[imageIndex -1].style.backgroundImage;
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    })
+    dots[imageIndex -1].classList.add("active");
+    backdrop.style.backgroundImage = images[imageIndex - 1].style.backgroundImage;   
+    images[imageIndex -1].style.background = `linear-gradient(0deg, rgba(76,76,76,1) 0%, rgba(255,255,255,1) 100%), url(${images[imageIndex - 1].style.backgroundImage})`;
+
 }
