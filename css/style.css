@@ -12,6 +12,11 @@
 
 /* Non page-specific */
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -230,7 +235,7 @@ button:hover {
 
 }
 
-h3 {
+h2 {
     color: white;
     font-size: 2em;
     margin: 0 0 5px 20px;
@@ -240,10 +245,6 @@ h3 {
 .slide div {
     margin: 0 20px 20px;
     color: white;
-}
-
-#game1, #game2, #game3 {
-
 }
 
 
@@ -336,16 +337,53 @@ h3 {
     font-size: 2rem;
 }
 
-.news {
-
+.gamemodes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin-top: 30vh;
-    height: 100vh;
     width: 100vw;
     box-shadow: 0 200px 300px rgba(33, 33, 40, 1) inset;
     background-image: linear-gradient(0deg, rgb(33, 33, 40, 0.95) 0%, rgb(33, 33, 40, 0.95) 100%), url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.game:nth-child(even) {
+    flex-direction: row-reverse;
+
+}
+
+.game {
+    margin: 40px 0;
+    width: var(--pageWidth);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+}
+
+.gameImg {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    margin-right: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.game p {
+    max-width: 500px;
+}
+
+h3 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
 }
 
 @keyframes fade {
@@ -358,6 +396,25 @@ h3 {
 }
 
 @media (max-width: 900px) {
+    .game {
+        flex-direction: column;
+        text-align: center;
+margin: 5px;
+    }
+
+    .game p {
+        width: 100vw;
+    }
+
+    .gameImg {
+        max-width: 400px;
+        border-radius: 0;
+    }
+
+    .game:nth-child(even) {
+        flex-direction: column;
+    }
+
     .statistic p {
         font-size: 1.5rem;
     }
