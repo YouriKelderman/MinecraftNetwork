@@ -373,17 +373,45 @@ h2 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.9);
+}
+.game-addon{
+    width: 70px;
+    background-color: #424242;
+    border-radius: 10px;
+    padding: 5px;
+    border: 5px solid #5b5b5b;
+    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.9);
 }
 
+.game-addon:nth-child(1){
+position: relative;
+    top: -10%;
+    left: 20%;
+}
+.game-addon:nth-child(2){
+    position: relative;
+    top: 85%;
+    left: 40%;
+}
 .game p {
     max-width: 500px;
+    text-shadow: 2px 2px 2px rgba(20, 9, 5, 0.8);
 }
-
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+.reveal.active{
+    translateY(0);
+}
 h3 {
     font-size: 3em;
     font-weight: bold;
     margin: 0;
+    text-shadow: 5px 5px 5px rgba(20, 9, 5, 0.4);
 }
 
 @keyframes fade {
@@ -396,6 +424,9 @@ h3 {
 }
 
 @media (max-width: 900px) {
+    .game-addon{
+        display: none;
+    }
     .game {
         flex-direction: column;
         text-align: center;
@@ -403,12 +434,13 @@ margin: 5px;
     }
 
     .game p {
-        width: 100vw;
+        width: 90vw;
     }
 
     .gameImg {
         max-width: 400px;
         border-radius: 0;
+        margin: 30px 0;
     }
 
     .game:nth-child(even) {
@@ -434,9 +466,7 @@ margin: 5px;
         display: none;
     }
 
-    .active {
-        background-color: rgba(0, 0, 0, 0) !important;
-    }
+
 
     .hamburger {
         display: block !important;
