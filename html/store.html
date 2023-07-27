@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+          content="Landing page for MineHub, a minecraft server with various minigames such as Spleef Royale, Parkour Tag and more.">
+    <title>MineHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer type="text/javascript"></script>
+    <script src="../js/store.js" defer type="text/javascript"></script>
+</head>
+<body>
+<header>
+    <nav id="navbar">
+        <div id="navHolder">
+            <div id="navLinks">
+                <img src="../img/MINEHUB.png" alt="Server Logo" id="navLogo">
+                <ul>
+                    <li class="nav-item">
+                        <a href="../html/landing.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="icon" alt="store icon" src="../img/cart1.svg"><a href="" class="nav-link">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="icon" alt="merch icon" src="../img/hanger.svg"><a href="" class="nav-link">Merch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <button name="play" id="playButton">play.cool.ip.net</button>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<main>
+    <section id="amount">
+        <div id="menu">
+            <img src="../img/coins.png" alt="amount of coins" id="coinsImg">
+            <input type="range" min="0" max="6" value="0" class="slider" id="coinRange" oninput="sliderChange(this.value)">
+            <div id="result">
+                <span id="coins">Coins: 650</span>
+                <span id="cost">$43,00</span>
+            </div>
+        </div>
+    </section>
+</main>
