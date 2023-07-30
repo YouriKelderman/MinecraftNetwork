@@ -22,11 +22,12 @@
 ::-webkit-scrollbar {
     width: 10px;
     background-color: var(--bg-main);
+    border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #505050;
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 #navbar, .active, #navbar button, #navbar.active button, #navbar img, #navLogo {
@@ -45,6 +46,9 @@
     justify-content: center;
     font-size: 1.2em;
     z-index: 100;
+    -webkit-box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.55);
 }
 
 #navHolder {
@@ -129,6 +133,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
 }
 
 ul {
@@ -141,6 +146,7 @@ html {
     font-family: "Roboto";
     font-weight: normal;
     background-color: var(--bg-main);
+
 }
 
 
@@ -154,6 +160,9 @@ button {
     border-radius: 5px;
     font-size: 1.1em;
     font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.27);
 }
 
@@ -198,7 +207,7 @@ button:hover {
     align-items: center;
     flex-direction: column;
     align-self: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 
 .games {
@@ -220,6 +229,7 @@ button:hover {
     z-index: 90;
     width: 30vw;
     max-width: 450px;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
 .slide {
@@ -351,10 +361,11 @@ h2 {
     margin-top: 30vh;
     width: 100vw;
     box-shadow: 0 200px 300px rgba(33, 33, 40, 1) inset;
-    background-image: linear-gradient(0deg, rgb(33, 33, 40, 0.95) 0%, rgb(33, 33, 40, 0.95) 100%), url("../img/background.jpg");
+    background-image: linear-gradient(0deg, rgb(33, 33, 40, 0.99) 0%, rgb(33, 33, 40, 0.99) 100%), url("../img/background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .game:nth-child(even) {
@@ -442,65 +453,155 @@ h3 {
 
 #amount {
     width: 100vw;
-    height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-image: url("../img/background2.jpg");
+    background-size: cover;
+    background-position: center;
+
 }
 
 #coinsImg {
     width: 100px;
 }
 
-#coinRange {
-    width: 400px;
-    outline: none;
+#player {
+    width: 154px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-#menu {
-    width: 600px;
-    height: 400px;
+#balance {
+    width: 30px;
+    height: 30px;
+}
+
+.coins {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    z-index: 10;
 }
 
-#result {
-    width: 400px;
+#playerHead {
+    cursor: pointer;
+    margin-left: 20px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+#logout {
+    position: absolute;
+    transform: translate3D(9px, 50px, 0);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #383838;
+}
+
+.buy {
+    width: 150px;
+    height: 60px;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.buttonImg {
+    width: 30px;
+
+}
+
+.tier {
+    width: 50vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-top: 1px solid rgb(96, 96, 96)
 }
 
-#flood {
-    width: 100vw;
-    height: 0;
-    background-color: yellow;
-    bottom: 0;
-    margin: 0 auto;
+.tier:nth-child(1) {
+    border-top: none;
+}
+
+.amount {
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.price {
+    color: lightgray;
+    margin: 5px 0 10px 40px;
+}
+
+#logo {
+    transform: translateY(-114px);
     position: absolute;
+    z-index: 90;
+    width: 30vw;
+    min-width: 200px;
+    max-width: 450px;
+    padding-right: 10px;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+#blurBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(5px);
     z-index: 1;
-    transition: 1s ease;
-    max-height: 100vh;
 }
-.wave {
-    background: url("../img/wave.svg");
+
+#tiers {
+    z-index: 2;
+    background-color: #343232;
+    border-radius: 20px;
+    padding-top: 60px;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 212px;
+height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+}
+
+#ScrollToBottom {
     position: absolute;
-    width: 200%;
-    height: 50%;
-    max-height: 100px   ;
-    color: #ffff00;
-    top: 0;
-    transform: translateY(-150px);
-    animation: wave 10s -3s linear infinite;
+    bottom: 20px;
+}
+
+#ScrollToBottom img {
+    width: 70px;
+}
+
+.coin {
+    width: 30px;
 
 }
+
+.coinIcon {
+    margin: 20px 0 0 10px;
+}
+
 @keyframes wave {
-    0% {transform: translate3d(0, -100%, 0);}
+    0% {
+        transform: translate3d(0, -90%, 0);
+    }
 
-    100% {transform: translate3D(-50%, -100%, 0);}
+    100% {
+        transform: translate3D(-50%, -90%, 0);
+    }
 }
+
 @keyframes fade {
     from {
         opacity: .6
@@ -610,4 +711,36 @@ h3 {
         padding: 10px;
     }
 
+    .tier {
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .buy {
+        width: 90%;
+        margin: 0 0 20px 0;
+    }
+
+    .cost {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+
+
+    }
+
+    #tiers {
+        width: 80vw;
+    }
+
+    .coinIcon {
+        margin: 0;
+    }
+#logo{
+    width: 80vw;
+}
+    .price {
+        margin: 1px 0 0 15px;
+    }
 }

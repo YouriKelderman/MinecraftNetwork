@@ -33,7 +33,12 @@
                     </li>
                 </ul>
             </div>
-            <button name="play" id="playButton">play.cool.ip.net</button>
+            <div id="player">
+                <div class="coins"><img src="../img/coin.png" id="balance">
+                    <p>500</p></div>
+                <img src="../img/player.png" id="playerHead" onmouseover="hover()">
+                <p id="logout">Log Out</p>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -45,17 +50,81 @@
 </header>
 <main>
     <section id="amount">
-        <div id="menu">
-            <img src="../img/coins.png" alt="amount of coins" id="coinsImg">
-            <input type="range" min="0" max="6" value="0" class="slider" id="coinRange"
-                   oninput="sliderChange(this.value)">
-            <div id="result">
-                <span id="coins">Coins: 650</span>
-                <span id="cost">$43,00</span>
+        <div id="blurBox"></div>
+        <div id="tiers">
+            <a id="ScrollToBottom" href="#bottom"><img src="../img/arrow.svg"></a>
+            <img id="logo" src="../img/MINEHUB.png" alt="server logo">
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
+            </div>
+            <div class="tier">
+                <div class="cost">
+                    <div class="center coinIcon"><img src="../img/coin.png" class="coin"><p class="amount">60 coins</p></div>
+                    <p class="price">$1.49 USD</p>
+                </div>
+                <button class="buy" id="bottom"><img src="../img/cart2.svg" class="buttonImg">Buy</button>
             </div>
         </div>
-        <div id="flood">
-            <div class="wave"></div>
-        </div>
+
     </section>
 </main>

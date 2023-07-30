@@ -6,6 +6,7 @@ let costSpan;
 let range;
 let flood;
 let parent;
+let logout;
 let prices = [
     [60, 1.49],
     [300, 6.99],
@@ -19,11 +20,13 @@ function init() {
     range = document.getElementById("coinRange");
     coinsSpan = document.getElementById("coins");
     costSpan = document.getElementById("cost");
+    logout = document.getElementById("logout")
     parent = document.getElementById("amount")
     flood = document.getElementById("flood");
     range.max = (prices.length -1).toString();
     sliderChange(0)
     range.value = 0;
+    logout.style.display = "none";
 }
 
 function sliderChange(e) {
@@ -32,4 +35,8 @@ function sliderChange(e) {
     let heightToUse = (e/prices.length) * parent.getBoundingClientRect().height +50;
     console.log(heightToUse);
     flood.style.height = `${heightToUse}px`;
+}
+
+function hover(){
+logout.style.display = "block";
 }
