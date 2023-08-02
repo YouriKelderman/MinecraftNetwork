@@ -246,8 +246,15 @@ button:hover {
     background-repeat: no-repeat;
 
 }
-
+h1{
+    z-index: 10;
+    color: white;
+    font-size: 3em;
+    margin: 0 0 5px 20px;
+    font-weight: bold;
+}
 h2 {
+    z-index: 10;
     color: white;
     font-size: 2em;
     margin: 0 0 5px 20px;
@@ -536,7 +543,7 @@ h3 {
 
 .price {
     color: lightgray;
-    margin: 5px 0 10px 40px;
+    margin: 5px 0 10px 0;
 }
 
 #logo {
@@ -568,12 +575,23 @@ h3 {
     align-items: center;
     flex-direction: column;
     margin-top: 212px;
+    margin-bottom: 100px;
 height: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
 
 }
+.tierIcon{
+    width: 60px;
+    margin: 20px 10px;
 
+}
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 #ScrollToBottom {
     position: absolute;
     bottom: 20px;
@@ -612,6 +630,9 @@ height: 100%;
 }
 
 @media (max-width: 900px) {
+    .game button{
+        display: inline;
+    }
     .game-addon {
         display: none;
     }
@@ -732,6 +753,7 @@ height: 100%;
 
     #tiers {
         width: 80vw;
+
     }
 
     .coinIcon {
