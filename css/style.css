@@ -225,10 +225,12 @@ button:hover {
 }
 
 #openingLogo {
-    transform: translateY(-90px);
+
     position: absolute;
     z-index: 90;
-
+left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50px);
     max-width: 450px;
     filter: drop-shadow(5px 5px 5px #222);
 }
@@ -283,7 +285,7 @@ h2 {
 
 #carousel {
     width: var(--pageWidth);
-    height: 450px;
+    height: 60vh;
     border-radius: 20px;
     background-color: var(--bg-main);
     transform: translateY(150px);
@@ -721,7 +723,7 @@ height: 100%;
 }
 @media (max-width: 850px) {
     #openingLogo {
-        transform: translateY(-100px);
+
         width: var(--pageWidth)
     }
 
