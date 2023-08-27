@@ -8,21 +8,27 @@ let backdrop;
 let imageIndex = 1;
 let dots = [];
 let images = [];
+let games = [];
+let gameButtons = [];
 let dotsHolder;
+let currentGame = 0;
 
 function init() {
     navbar = document.getElementById("navbar")
     hamburger = document.getElementById("hamburger");
     backdrop = document.getElementById("games")
     images = document.getElementsByClassName("slide");
-
+    games = document.getElementsByClassName("game");
+    gameButtons = document.getElementsByClassName("gameButton");
     dotsHolder = document.getElementById("dots");
     window.addEventListener("scroll", windowScroll);
     hamburger.addEventListener("click", menu);
     windowScroll();
     dotSetup();
     switchActive();
-autoSlide();
+    autoSlide();
+    changeCurrentGame(0)
+    autoSlideGames();
 }
 
 function menu() {
@@ -91,9 +97,9 @@ function switchActive(x, swapSide) {
         imageIndex = 1
     }
     console.log(imageIndex)
-    Array.prototype.forEach.call(images, function(slide, index) {
+    Array.prototype.forEach.call(images, function (slide, index) {
         // Do stuff here
-        slide.style.transform = `translateX(${(index - imageIndex +1)* 100}%)`;
+        slide.style.transform = `translateX(${(index - imageIndex + 1) * 100}%)`;
     });
 
     dots.forEach(dot => {
@@ -105,7 +111,31 @@ function switchActive(x, swapSide) {
 
 }
 
+function changeCurrentGame(gameToGet) {
+    currentGame = gameToGet;
+
+    Array.prototype.forEach.call(gameButtons, function (button, index) {
+        button.className = button.className.replace(" active", "");
+    })
+    gameButtons[gameToGet].classList.add("active");
+    Array.prototype.forEach.call(games, function (game, index) {
+        // Do stuff here
+        console.log(index - gameToGet);
+        game.style.transform = `translateY(${(index - gameToGet) * 100}%)`;
+    });
+}
+
+
 function autoSlide() {
     plusSlides(1, 0)
-    setTimeout(autoSlide, 10000); // Change image every 2 seconds
+    setTimeout(autoSlide, 10000);
+}
+
+function autoSlideGames() {
+    currentGame++;
+    if (currentGame > games.length -1) {
+        currentGame = 0;
+    }
+    changeCurrentGame(currentGame);
+    setTimeout(autoSlideGames, 20000)
 }
