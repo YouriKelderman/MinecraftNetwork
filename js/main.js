@@ -22,7 +22,7 @@ function init() {
     windowScroll();
     dotSetup();
     switchActive();
-
+autoSlide();
 }
 
 function menu() {
@@ -103,4 +103,9 @@ function switchActive(x, swapSide) {
     backdrop.style.backgroundImage = images[imageIndex - 1].style.backgroundImage;
     images[imageIndex - 1].style.background = `linear-gradient(0deg, rgba(76,76,76,1) 0%, rgba(255,255,255,1) 100%), url(${images[imageIndex - 1].style.backgroundImage})`;
 
+}
+
+function autoSlide() {
+    plusSlides(1, 0)
+    setTimeout(autoSlide, 10000); // Change image every 2 seconds
 }
