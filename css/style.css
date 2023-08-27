@@ -290,7 +290,7 @@ button:hover {
     z-index: 90;
     left: 50%;
     right: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -50%);
     max-width: 450px;
     filter: drop-shadow(5px 5px 5px #222);
 }
@@ -470,6 +470,7 @@ h2 {
 }
 .gameIcon {
     width: 40px;
+    margin-left: 5px;
 }
 
 
