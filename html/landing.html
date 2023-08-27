@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <nav id="navbar">
+    <nav id="navbar" class="centerVert">
         <div id="navHolder">
             <div id="navLinks">
                 <img src="../img/MINEHUB.png" alt="Server Logo" id="navLogo">
@@ -45,25 +45,25 @@
 
 </header>
 <main>
-    <section class="games" id="games">
-        <div class="container">
+    <section class="games fill attach center" id="games">
+        <div class="container fill column center">
             <img id="openingLogo" src="../img/MINEHUB.png" alt="server logo">
             <div id="carousel">
-                <div style="width: 100%; height: 100%; border-radius: 20px; overflow-x: hidden; position: relative">
-                    <div class="slide"
-                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game1.jpg');"
+                <div id="holder">
+                    <div class="slide fill attach"
+                         style="background-image: url('../img/game1.jpg');"
                          id="game1">
                         <h2>Parkour Tag</h2>
                         <div class="text">Parkour tag: You're it! I honestly dont know what the game is.</div>
                     </div>
-                    <div class="slide"
-                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game2.jpg');"
+                    <div class="slide fill attach"
+                         style="background-image: url('../img/game2.jpg');"
                          id="game2">
                         <h2>Spleef Royale</h2>
                         <div class="text">If the original spleef isn't fun enough, we've got you covered!</div>
                     </div>
-                    <div class="slide"
-                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game3.jpg');"
+                    <div class="slide fill attach"
+                         style="background-image: url('../img/game3.jpg');"
                          id="game3">
                         <h2>Ouch!</h2>
                         <div class="text">That looked like it hurt.</div>
@@ -72,7 +72,6 @@
                 <a id="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                 <a id="next" onclick="plusSlides(1, 1)">&#10095;</a>
                 <div id="dots" style="text-align:center">
-
                 </div>
             </div>
         </div>
@@ -92,7 +91,8 @@
             <p>Friendly Staff</p>
         </div>
     </section> -->
-    <section class="gamemodes center">
+    <section class="gamemodes column centerHor">
+        <h1>Our Games</h1>
         <div id="gameList">
             <div class="gameButton center" onclick="">
                 <p>Spleef Royale</p>
@@ -110,61 +110,22 @@
                 <p>Spleef Royale</p>
                 <img src="../img/mclogo.svg" class="gameIcon">
             </div>
-            <div class="gameButton center" onclick="">
-                <p>Spleef Royale</p>
-                <img src="../img/mclogo.svg" class="gameIcon">
-            </div>
-            <div class="gameButton center" onclick="">
-                <p>Spleef Royale</p>
-                <img src="../img/mclogo.svg" class="gameIcon">
-            </div>
-            <div class="gameButton center" onclick="">
-                <p>Spleef Royale</p>
-                <img src="../img/mclogo.svg" class="gameIcon">
-            </div>
-            <div class="gameButton center" onclick="">
-                <p>Spleef Royale</p>
-                <img src="../img/mclogo.svg" class="gameIcon">
-            </div>
+
         </div>
-        <div class="game">
-            <div class="gameImg" style="background-image: url('../img/game2.jpg')">
-                <img class="game-addon" src="../img/shovel.webp" alt="icon for game">
-                <img class="game-addon move" src="../img/snowball.webp" alt="icon for game">
-            </div>
-            <div>
-                <h3>Parkour Tag</h3>
-                <p>Maecenas elementum efficitur augue nec pulvinar. Donec diam nisi, auctor vitae vestibulum sit amet,
-                    lobortis id odio. Aenean auctor eu dolor nec vehicula. Cras blandit auctor ipsum, quis venenatis
-                    dolor ullamcorper id. Aliquam vulputate</p>
-                <button>Play Now!</button>
-            </div>
-        </div>
-        <div class="game">
-            <div class="gameImg" style="background-image: url('../img/game1.jpg')">
-                <img class="game-addon move" src="../img/shovel.webp" alt="icon for game">
-                <img class="game-addon" src="../img/snowball.webp" alt="icon for game">
-            </div>
-            <div>
-                <h3>Spleef Royale</h3>
-                <p>Maecenas elementum efficitur augue nec pulvinar. Donec diam nisi, auctor vitae vestibulum sit amet,
-                    lobortis id odio. Aenean auctor eu dolor nec vehicula. Cras blandit auctor ipsum, quis venenatis
-                    dolor ullamcorper id. Aliquam vulputate</p>
-                <button>Play Now!</button>
-            </div>
-        </div>
-        <div class="game">
-            <div class="gameImg" style="background-image: url('../img/game1.jpg')">
-                <img class="game-addon" src="../img/shovel.webp" alt="icon for game">
-                <img class="game-addon move" src="../img/snowball.webp" alt="icon for game">
-            </div>
-            <div>
-                <h3>Royal Spleef</h3>
-                <p>Maecenas elementum efficitur augue nec pulvinar. Donec diam nisi, auctor vitae vestibulum sit amet,
-                    lobortis id odio. Aenean auctor eu dolor nec vehicula. Cras blandit auctor ipsum, quis venenatis
-                    dolor ullamcorper id. Aliquam vulputate</p>
-                <button>Play Now!</button>
-            </div>
+        <div id="gameDisplay">
+                <div class="game center row">
+                    <div class="column" style="width: 330px">
+                        <h3>This is a game!</h3>
+                        <p class="gameType">GameType</p>
+                        <p class="gameText">This is information about said game! This game is very game-y we are gamign this is gaming time yes yes gaming placeholder <br><br>text no thanks yesmmmmmm hame my god thats a lot of text I really hope no one actually sits there and reads all of this that would be so awkward</p>
+                        <button>Play Now</button>
+                    </div>
+                    <div class="center">
+                        <img src="https://hypixel.net/styles/hypixel-v2/images/game-art/Paintball.png" width="400px">
+                        <img src="../img/imgButton.svg" class="imgButton">
+                    </div>
+
+                </div>
         </div>
     </section>
 </main>

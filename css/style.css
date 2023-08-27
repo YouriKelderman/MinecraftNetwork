@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 :root {
-    --nav: #1c1c21;
+    --nav: #141416;
     --nav-mobile: #383942;
-    --bg-main: #212128;
+    --bg-main: #1c1c21;
     --btn-default: #219b12;
     --stats-bar: #6d9650;
     --pageWidth: 70vw;
     --scrollTransition: 500ms;
+}
+
+main {
+    width: 100vw;
 }
 
 /* Non page-specific */
@@ -16,6 +20,64 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.centerVert {
+    display: flex;
+    justify-content: center;
+}
+
+.centerHor {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.fill {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.attach {
+    background-attachment: fixed;
+}
+
+.up {
+    animation: flipUp 2s infinite;
+}
+
+.down {
+    animation: flipDown 2s infinite;
+}
+
+@keyframes flipUp {
+    0% {
+
+    }
+    100% {
+        transform: translate3d(20px, -250px, -150px) rotateX(90deg);
+
+    }
+}
+
+@keyframes flipDown {
+    0% {
+        transform: translate3d(20px, 250px, 150px) rotateX(-90deg);
+
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotateX(0deg);
+
+    }
 }
 
 /* Scrollbar */
@@ -42,8 +104,7 @@
     margin: 0;
     padding: 0;
     position: fixed;
-    display: flex;
-    justify-content: center;
+
     font-size: 1.2em;
     z-index: 100;
     -webkit-box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.55);
@@ -203,32 +264,21 @@ button:hover {
 .container {
     width: 100vw;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-self: center;
+
     backdrop-filter: blur(5px);
 }
 
 .games {
     height: 80vh;
     margin: 0;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-
+    width: 100vw;
 }
 
-#openingLogo {
 
+#openingLogo {
     position: absolute;
     z-index: 90;
-left: 50%;
+    left: 50%;
     right: 50%;
     transform: translate(-50%, -100%);
     max-width: 450px;
@@ -239,36 +289,39 @@ left: 50%;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end !important;
     flex-direction: column;
-position: absolute;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-transition: all 500ms;
+    position: absolute;
+
+    transition: all 500ms;
 }
-.swapRight{
+
+.swapRight {
     animation-name: swipeToRight;
     animation-duration: 1s;
 }
-.swapLeft{
+
+.swapLeft {
     animation-name: swipeToLeft;
     animation-duration: 1s;
 }
-#gameList{
+
+#gameList {
     display: flex;
     flex-direction: row !important;
     max-width: var(--pageWidth);
     flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.34);
 }
-h1{
+
+h1 {
     z-index: 10;
     color: white;
     font-size: 3em;
     margin: 0 0 5px 20px;
     font-weight: bold;
 }
+
 h2 {
     z-index: 10;
     color: white;
@@ -282,6 +335,17 @@ h2 {
     color: white;
 }
 
+.slide div, .slide h2 {
+    z-index: 16;
+}
+
+#holder {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
 
 #carousel {
     width: var(--pageWidth);
@@ -293,6 +357,16 @@ h2 {
     z-index: 89;
     box-shadow: 0px 0px 23px 0px rgba(0, 0, 0, 0.75);
 
+}
+
+.slide::after {
+    content: "";
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 67%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
 }
 
 .dot {
@@ -349,277 +423,104 @@ h2 {
     animation-duration: 2s;
 }
 
-/* about section */
-#stats {
-    margin-top: 30vh;
-    width: 100vw;
-    height: 150px;
-    background-color: #1e1e1e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.statistic {
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 0 40px;
-}
-
-.statistic:nth-child(2) {
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-}
-
-.statistic p {
-    margin-left: 5px;
-    font-size: 2rem;
-}
-
 .gamemodes {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     margin-top: 30vh;
     width: 100vw;
-    box-shadow: 0 200px 300px rgba(33, 33, 40, 1) inset;
-    background-image: linear-gradient(0deg, rgb(33, 33, 40, 0.99) 0%, rgb(33, 33, 40, 0.99) 100%), url("../img/background1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: var(--bg-main);
 }
 
-.game:nth-child(even) {
-    flex-direction: row-reverse;
-
-}
-
-.game {
-    margin: 40px 0;
-    width: var(--pageWidth);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    color: white;
-}
 
 .game button {
     margin: 10px;
 }
 
-.gameImg {
-    width: 400px;
-    height: 300px;
-    border-radius: 20px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.9);
-}
 
 .move {
     animation: move 5s infinite ease-in-out;
 }
 
-.game-addon {
-    width: 70px;
-    background-color: #424242;
-    border-radius: 10px;
-    padding: 5px;
-    border: 5px solid #5b5b5b;
-    box-shadow: 0 0 33px 0 rgba(0, 0, 0, 0.9);
-}
 
-.game-addon:nth-child(1) {
-    position: relative;
-    top: -10%;
-    left: 20%;
-}
-
-.game-addon:nth-child(2) {
-    position: relative;
-    top: 85%;
-    left: 40%;
-}
-
-.game p {
-    max-width: 500px;
-    text-shadow: 2px 2px 2px rgba(20, 9, 5, 0.8);
-    margin: 20px 10px;
-}
-
-.reveal {
-    position: relative;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: 1s all ease;
-}
-
-.reveal.active {
-translateY(0);
-}
-
-h3 {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 10px;
-    text-shadow: 5px 5px 5px rgba(20, 9, 5, 0.4);
-}
-.gameButton{
+.gameButton {
     flex-direction: row;
     width: 150px;
-    background-color: #525252;
+    background-color: #303030;
     justify-content: space-between !important;
     padding: 5px 15px;
-    border-radius: 5px;
     color: white;
     margin: 10px;
     cursor: pointer;
+    font-size: 0.9em;
+    font-family: SansSerif, sans-serif !important;
 }
-.gameIcon{
+
+.gameIcon {
     width: 30px;
 }
+
+
+#gameDisplay {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    margin: 30px 0 100px 0;
+    overflow: hidden;
+    z-index: 20;
+}
+
+
+
+.game {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    justify-content: space-between;
+}
+
+.game h3 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.gameType {
+    margin: 0 0 30px 0;
+
+    font-size: 0.8em;
+
+}
+
+.gameText {
+    width: 100%;
+    font-family: "Roboto Thin" !important;
+}
+
+.game button {
+    margin-left: 0;
+}
+.imgButton{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    animation: float 5s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 /*                     */
 /*   STORE SECTION     */
 /*                     */
 
-#amount {
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../img/background2.jpg");
-    background-size: cover;
-    background-position: center;
-
-}
-
-#coinsImg {
-    width: 100px;
-}
-
-#player {
-    width: 154px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#balance {
-    width: 30px;
-    height: 30px;
-}
-
-.coins {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
-
-#playerHead {
-    cursor: pointer;
-    margin-left: 20px;
-    width: 60px;
-    border-radius: 50%;
-}
-
-#logout {
-    position: absolute;
-    transform: translate3D(9px, 50px, 0);
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #383838;
-}
-
-.buy {
-    width: 150px;
-    height: 60px;
-    font-size: 1.5em;
-    margin-right: 20px;
-}
-
-.buttonImg {
-    width: 30px;
-
-}
-
-.tier {
-    width: 50vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    border-top: 1px solid rgb(96, 96, 96)
-}
-
-.tier:nth-child(1) {
-    border-top: none;
-}
-
-.amount {
-    color: white;
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.price {
-    color: lightgray;
-    margin: 5px 0 10px 0;
-}
-
-#logo {
-    transform: translateY(-114px);
-    position: absolute;
-    z-index: 90;
-    width: 30vw;
-    min-width: 200px;
-    max-width: 450px;
-    padding-right: 10px;
-    filter: drop-shadow(5px 5px 5px #222);
-}
-
-#blurBox {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backdrop-filter: blur(5px);
-    z-index: 1;
-}
-
-#tiers {
-    z-index: 2;
-    background-color: #343232;
-    border-radius: 20px;
-    padding-top: 60px;
-    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 212px;
-    margin-bottom: 100px;
-height: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-
-}
-.tierIcon{
-    width: 60px;
-    margin: 20px 10px;
-
-}
-.section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
 #ScrollToBottom {
     position: absolute;
     bottom: 20px;
@@ -631,7 +532,6 @@ height: 100%;
 
 .coin {
     width: 30px;
-
 }
 
 .coinIcon {
@@ -658,39 +558,8 @@ height: 100%;
 }
 
 @media (max-width: 900px) {
-    .game button{
+    .game button {
         display: inline;
-    }
-    .game-addon {
-        display: none;
-    }
-
-    .game {
-        flex-direction: column;
-        text-align: center;
-        margin: 5px;
-    }
-
-    .game p {
-        width: 90vw;
-    }
-
-    .gameImg {
-        max-width: 400px;
-        border-radius: 0;
-        margin: 30px 0;
-    }
-
-    .game:nth-child(even) {
-        flex-direction: column;
-    }
-
-    .statistic p {
-        font-size: 1.5rem;
-    }
-
-    #stats {
-        flex-direction: column;
     }
 }
 
@@ -705,26 +574,33 @@ height: 100%;
         transform: translateY(0);
     }
 }
+
 @keyframes swipeToLeft {
     0% {
         transform: translateX(-100%);
     }
-    100%{
+    100% {
         transform: translateX(0);
     }
 }
+
 @keyframes swipeToRight {
-    0%{
+    0% {
         transform: translateX(0);
     }
-    100%{
+    100% {
         transform: translateX(100%);
     }
 }
+
 @media (max-width: 850px) {
     #openingLogo {
 
         width: var(--pageWidth)
+    }
+
+    #gameList {
+        max-width: 100vw;
     }
 
     #navLinks, #navbar button {
@@ -775,37 +651,5 @@ height: 100%;
         padding: 10px;
     }
 
-    .tier {
-        flex-direction: column;
-        width: 80vw;
-    }
 
-    .buy {
-        width: 90%;
-        margin: 0 0 20px 0;
-    }
-
-    .cost {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-
-
-    }
-
-    #tiers {
-        width: 80vw;
-
-    }
-
-    .coinIcon {
-        margin: 0;
-    }
-#logo{
-    width: 80vw;
-}
-    .price {
-        margin: 1px 0 0 15px;
-    }
 }

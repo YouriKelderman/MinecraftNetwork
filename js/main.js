@@ -101,7 +101,7 @@ function switchActive(x, swapSide) {
     })
     dots[imageIndex - 1].classList.add("active");
     backdrop.style.backgroundImage = images[imageIndex - 1].style.backgroundImage;
-    images[imageIndex - 1].style.background = `linear-gradient(0deg, rgba(76,76,76,1) 0%, rgba(255,255,255,1) 100%), url(${images[imageIndex - 1].style.backgroundImage})`;
+
 
 }
 
