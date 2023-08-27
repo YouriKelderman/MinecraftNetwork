@@ -230,7 +230,7 @@ button:hover {
     z-index: 90;
 left: 50%;
     right: 50%;
-    transform: translate(-50%, -50px);
+    transform: translate(-50%, -100%);
     max-width: 450px;
     filter: drop-shadow(5px 5px 5px #222);
 }
