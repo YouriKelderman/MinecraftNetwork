@@ -8,6 +8,7 @@
     <meta name="description"
           content="Landing page for MineHub, a minecraft server with various minigames such as Spleef Royale, Parkour Tag and more.">
     <title>MineHub</title>
+    <link rel="shortcut icon" type="image/jpg" href="../img/MINEHUB.png"/>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js" defer type="text/javascript"></script>
 </head>
@@ -22,7 +23,8 @@
                         <a href="../html/landing.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <img class="icon" alt="store icon" src="../img/cart1.svg"><a href="../html/store.html" class="nav-link">Store</a>
+                        <img class="icon" alt="store icon" src="../img/cart1.svg"><a href="../html/store.html"
+                                                                                     class="nav-link">Store</a>
                     </li>
                     <li class="nav-item">
                         <img class="icon" alt="merch icon" src="../img/hanger.svg"><a href="" class="nav-link">Merch</a>
@@ -47,26 +49,28 @@
         <div class="container">
             <img id="openingLogo" src="../img/MINEHUB.png" alt="server logo">
             <div id="carousel">
-                <div class="slide fade"
-                     style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game1.jpg');"
-                     id="game1">
-                    <h2>Parkour Tag</h2>
-                    <div class="text">Parkour tag: You're it! I honestly dont know what the game is.</div>
+                <div style="width: 100%; height: 100%; border-radius: 20px; overflow-x: hidden; position: relative">
+                    <div class="slide"
+                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game1.jpg');"
+                         id="game1">
+                        <h2>Parkour Tag</h2>
+                        <div class="text">Parkour tag: You're it! I honestly dont know what the game is.</div>
+                    </div>
+                    <div class="slide"
+                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game2.jpg');"
+                         id="game2">
+                        <h2>Spleef Royale</h2>
+                        <div class="text">If the original spleef isn't fun enough, we've got you covered!</div>
+                    </div>
+                    <div class="slide"
+                         style="background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game3.jpg');"
+                         id="game3">
+                        <h2>Ouch!</h2>
+                        <div class="text">That looked like it hurt.</div>
+                    </div>
                 </div>
-                <div class="slide fade"
-                     style="display: none; background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game2.jpg');"
-                     id="game2">
-                    <h2>Spleef Royale</h2>
-                    <div class="text">If the original spleef isn't fun enough, we've got you covered!</div>
-                </div>
-                <div class="slide fade"
-                     style="display: none; background-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgba(255,255,255,0) 67%), url('../img/game3.jpg');"
-                     id="game3">
-                    <h2>Ouch!</h2>
-                    <div class="text">That looked like it hurt.</div>
-                </div>
-                <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a id="next" onclick="plusSlides(1)">&#10095;</a>
+                <a id="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a id="next" onclick="plusSlides(1, 1)">&#10095;</a>
                 <div id="dots" style="text-align:center">
 
                 </div>
@@ -89,17 +93,38 @@
         </div>
     </section> -->
     <section class="gamemodes center">
-        <div class="game">
-            <div class="gameImg" style="background-image: url('../img/game1.jpg')">
-                <img class="game-addon move" src="../img/shovel.webp" alt="icon for game">
-                <img class="game-addon" src="../img/snowball.webp" alt="icon for game">
+        <div id="gameList">
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
             </div>
-            <div>
-                <h3>Royal Spleef</h3>
-                <p>Maecenas elementum efficitur augue nec pulvinar. Donec diam nisi, auctor vitae vestibulum sit amet,
-                    lobortis id odio. Aenean auctor eu dolor nec vehicula. Cras blandit auctor ipsum, quis venenatis
-                    dolor ullamcorper id. Aliquam vulputate</p>
-                <button>Play Now!</button>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
+            </div>
+            <div class="gameButton center" onclick="">
+                <p>Spleef Royale</p>
+                <img src="../img/mclogo.svg" class="gameIcon">
             </div>
         </div>
         <div class="game">

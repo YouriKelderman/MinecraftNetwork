@@ -7,7 +7,7 @@ let backdrop;
 // Image carousel
 let imageIndex = 1;
 let dots = [];
-let images;
+let images = [];
 let dotsHolder;
 
 function init() {
@@ -36,8 +36,9 @@ function windowScroll() {
     } else {
         navbar.classList.remove("active")
     }
-    
+
 }
+
 function reveal() {
     let reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
@@ -51,6 +52,7 @@ function reveal() {
         }
     }
 }
+
 reveal();
 window.addEventListener("scroll", reveal);
 
@@ -63,7 +65,7 @@ function dotSetup() {
         }
         dotsHolder.appendChild(span);
         dots.push(span);
-        console.log(dots);
+
     }
 }
 
@@ -71,12 +73,11 @@ function currentSlide(n) {
     switchActive(imageIndex = n);
 }
 
-function plusSlides(n) {
-    
-    switchActive(imageIndex += n);
+function plusSlides(n, swapSide) {
+    switchActive(imageIndex += n, swapSide);
 }
 
-function switchActive(x) {
+function switchActive(x, swapSide) {
     let i;
 
     if (x > images.length) {
@@ -85,18 +86,21 @@ function switchActive(x) {
     if (x < 1) {
         imageIndex = images.length
     }
-    for (i = 0; i < images.length; i++) {
-        images[i].style.display = "none";
-    }
+
     if (imageIndex > images.length) {
         imageIndex = 1
     }
-    images[imageIndex - 1].style.display = "flex";
+    console.log(imageIndex)
+    Array.prototype.forEach.call(images, function(slide, index) {
+        // Do stuff here
+        slide.style.transform = `translateX(${(index - imageIndex +1)* 100}%)`;
+    });
+
     dots.forEach(dot => {
         dot.classList.remove("active");
     })
-    dots[imageIndex -1].classList.add("active");
-    backdrop.style.backgroundImage = images[imageIndex - 1].style.backgroundImage;   
-    images[imageIndex -1].style.background = `linear-gradient(0deg, rgba(76,76,76,1) 0%, rgba(255,255,255,1) 100%), url(${images[imageIndex - 1].style.backgroundImage})`;
+    dots[imageIndex - 1].classList.add("active");
+    backdrop.style.backgroundImage = images[imageIndex - 1].style.backgroundImage;
+    images[imageIndex - 1].style.background = `linear-gradient(0deg, rgba(76,76,76,1) 0%, rgba(255,255,255,1) 100%), url(${images[imageIndex - 1].style.backgroundImage})`;
 
 }
